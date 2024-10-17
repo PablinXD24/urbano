@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #191c29;
+    color: white;
+}
+
+.layer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo {
+    max-width: 300px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: white; /* Botão branco */
+    color: #191c29;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #F2C6AC;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 250px;
+    border: 2px solid #F2C6AC;
+    border-radius: 5px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.icon {
+    width: 100px; /* Tamanho fixo */
+    height: 100px; /* Tamanho fixo */
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 10px); /* Neon default */
+    object-fit: contain; /* Garante que os ícones ocupem o espaço corretamente */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do ícone */
+    filter: brightness(150%) drop-shadow(0 0 10px); /* Aumenta o brilho mantendo o neon */
+}
+
+/* Efeito de neon */
+.neon-blue {
+    filter: drop-shadow(0 0 10px #0ff);
+}
+
+.neon-white {
+    filter: drop-shadow(0 0 10px #fff);
+}
+
+.neon-yellow {
+    filter: drop-shadow(0 0 10px #FFDD00);
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #F2C6AC;
+}

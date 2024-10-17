@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camadas de Serviço</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+    <!-- Primeira Camada: Entrada com a Logo -->
+    <div class="layer" id="layer1">
+        <img src="https://raw.githubusercontent.com/PablinXD24/reposit-rio-de-imagens/refs/heads/main/5W2H_-_Urbano_Solutions-1.pdf-removebg-preview.png" class="logo neon-blue" alt="Logo">
+        <button class="btn" onclick="goToLayer(2)">Entrar</button>
+    </div>
+
+    <!-- Segunda Camada: Login com CPF -->
+    <div class="layer hidden" id="layer2">
+        <h2>Faça login com seu CPF</h2>
+        <form id="cpfForm" onsubmit="goToLayer(3); return false;">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+
+    <!-- Terceira Camada: Escolha entre Uber e 99 -->
+    <div class="layer hidden" id="layer3">
+        <h2>Escolha o serviço</h2>
+        <div class="service-container">
+            <img src="https://cdn-icons-png.flaticon.com/128/5969/5969323.png" alt="Uber" class="icon neon-white" onclick="goToLayer(4)">
+            <img src="https://99app.com/wp-content/uploads/2021/05/99_icon_pax_ios.png" alt="99" class="icon neon-yellow" onclick="goToLayer(4)">
+        </div>
+    </div>
+
+    <!-- Quarta Camada: Escolha da Rota -->
+    <div class="layer hidden" id="layer4">
+        <h2>Escolha sua rota</h2>
+        <form id="routeForm" onsubmit="addMarker(); return false;">
+            <input type="text" id="departure" name="departure" placeholder="Partida" required>
+            <input type="text" id="destination" name="destination" placeholder="Destino" required>
+            <button type="submit" class="btn">Buscar Rota</button>
+        </form>
+        <div id="map"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
